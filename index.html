@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StartupVerse India: Building India's Startup Operating System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand" onclick="showView('home')"><img src="images/startupverselogo.png" alt="StartupVerse India logo" class="brand-logo"/>StartupVerse India</div>
+    <nav class="links">
+      <button data-view="home" onclick="showView('home')">Home</button>
+      <button data-view="listspace" onclick="showView('listspace')">List Your Space</button>
+      <button data-view="company" onclick="showView('company')">Find Space</button>
+      <button data-view="dashboard" onclick="showView('dashboard')">Dashboard</button>
+    </nav>
+    <button class="btn btn-primary btn-sm" onclick="showView('company')">Get Started</button>
+  </div>
+</header>
+
+<main id="view-home" class="view active">
+  <section class="hero">
+    <div class="shell hero-grid">
+      <div>
+        <span class="eyebrow">India's Integrated Startup Infrastructure Platform</span>
+        <h1>Building India's<br><em>Startup Operating System</em></h1>
+        <p class="lead">Workspace, mentors and investors: one platform, not ten.</p>
+        <div class="hero-ctas">
+          <button class="btn btn-primary" onclick="showView('company')">Find Space for Your Team</button>
+          <button class="btn btn-outline" onclick="showView('listspace')">List Your Property</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><b>212K+</b><span>DPIIT-registered startups</span></div>
+          <div class="stat"><b>1,500+</b><span>Accelerators active in India</span></div>
+          <div class="stat"><b id="stat-live-props">-</b><span>Spaces live on the platform</span></div>
+        </div>
+      </div>
+      <div class="network">
+        <div class="ring">
+          <div class="node center"><span>StartupVerse</span><span>India</span></div>
+          <div class="node" style="left:6%;top:14%;">Startups</div>
+          <div class="node" style="right:2%;top:20%;">Investors</div>
+          <div class="node" style="right:-2%;bottom:22%;">Mentors</div>
+          <div class="node" style="left:10%;bottom:10%;">Space Providers</div>
+          <div class="node" style="left:38%;top:0%;">Corporates</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-shell">
+    <div class="shell">
+      <div class="band-label">Registered on StartupVerse India</div>
+      <div class="band-track-wrap">
+        <div class="band-track" id="company-band-track">
+          <div class="band-chip demo"><span class="dot"></span>Loading…</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="who">
+    <div class="shell who-grid">
+      <div>
+        <span class="eyebrow">Who We Are</span>
+        <h2 style="margin-top:10px;">Not a co-working company.<br>A startup infrastructure platform.</h2>
+        <p>We match businesses with spare workspace to startups that need it, plus mentorship, investor access and legal support, all in one place.</p>
+      </div>
+      <ul class="who-list">
+        <li><span class="mark">1</span><div><b>Physical + Digital.</b> Real workspace, matched through the platform.</div></li>
+        <li><span class="mark">2</span><div><b>Founder-first.</b> Built for early-stage teams and budgets.</div></li>
+        <li><span class="mark">3</span><div><b>Two-sided.</b> Separate forms for providers and startups.</div></li>
+        <li><span class="mark">4</span><div><b>Delhi first, India next.</b> Expanding city by city.</div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tinted">
+    <div class="shell">
+      <div class="section-head">
+        <span class="eyebrow">What We Offer</span>
+        <h2>Everything a startup needs, under one roof</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card"><div class="icon">🏢</div><h3>Co-working &amp; Managed Offices</h3><p>Flexible workspace, matched to your budget.</p></div>
+        <div class="service-card"><div class="icon">🚀</div><h3>Startup Incubation</h3><p>From idea to product-market fit.</p></div>
+        <div class="service-card"><div class="icon">💰</div><h3>Investor Connect</h3><p>Curated intros to angels &amp; VCs.</p></div>
+        <div class="service-card"><div class="icon">📋</div><h3>Compliance &amp; Legal</h3><p>Regulatory, tax and legal support.</p></div>
+        <div class="service-card"><div class="icon">🤝</div><h3>Corporate Innovation</h3><p>Partnerships, pilots &amp; procurement.</p></div>
+        <div class="service-card"><div class="icon">👥</div><h3>Founder Community</h3><p>Peer networks &amp; ecosystem events.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="paths-section">
+    <div class="shell">
+      <div class="section-head">
+        <span class="eyebrow">Get Started</span>
+        <h2>Two sides, two forms</h2>
+      </div>
+      <div class="paths paths-2">
+        <div class="path-card">
+          <span class="eyebrow">For Space Providers &amp; Government Bodies</span>
+          <h3>List your space</h3>
+          <p>Private property or spare government space: size, seats, amenities and photos to get matched with teams.</p>
+          <button class="btn btn-primary" onclick="showView('listspace')">List Your Space →</button>
+        </div>
+        <div class="path-card alt">
+          <span class="eyebrow">For Startups &amp; Companies</span>
+          <h3>Find your team a home</h3>
+          <p>Team size, budget and must-haves, and we'll match you.</p>
+          <button class="btn btn-primary" onclick="showView('company')">Find Space →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tinted">
+    <div class="shell">
+      <div class="section-head">
+        <span class="eyebrow">How It Works</span>
+        <h2>From registration to move-in</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="num">01</div><h4>Register</h4><p>Providers and teams each fill their own form.</p></div>
+        <div class="step"><div class="num">02</div><h4>Match</h4><p>Matched by city, budget and amenities.</p></div>
+        <div class="step"><div class="num">03</div><h4>Move in</h4><p>Managed from the dashboard, ready to go.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<main id="view-listspace" class="view">
+  <div class="shell">
+    <div class="section-head" style="margin:0 auto 44px;text-align:center;max-width:640px;">
+      <span class="eyebrow">List Your Space</span>
+      <h2>Who's listing?</h2>
+      <p>Pick the option that matches you; each has its own short form.</p>
+    </div>
+    <div class="paths paths-2">
+      <div class="path-card">
+        <span class="eyebrow">For Companies &amp; Space Providers</span>
+        <h3>List a private property</h3>
+        <p>Own or manage an office, co-working floor or building? List it here and get matched with startups.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdr3ZNL8vNZDvqHr5ThF_PIJ5bdSx-91rBIfLMxAdckXkLDLw/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="btn btn-primary">List a Company Space →</a>
+      </div>
+      <div class="path-card gov">
+        <span class="eyebrow">For Government Departments</span>
+        <h3>List a government space</h3>
+        <p>Got an under-used government building, floor or annexe? List it here for registered companies to apply.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdr3ZNL8vNZDvqHr5ThF_PIJ5bdSx-91rBIfLMxAdckXkLDLw/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="btn btn-primary">List a Government Space →</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<main id="view-provider" class="view">
+  <div class="shell form-shell">
+    <div class="form-head">
+      <span class="eyebrow">For Area / Space Providers</span>
+      <h2>List your property on StartupVerse India</h2>
+      <p>Give us the details once, and your listing goes live on your dashboard, where you can edit it or add more properties any time.</p>
+    </div>
+
+    <div class="success-box" id="provider-success">
+      <h4>✅ Property submitted</h4>
+      <p id="provider-success-text"></p>
+      <button class="btn btn-primary btn-sm" onclick="goToDashboard('provider')">Go to Dashboard →</button>
+    </div>
+
+    <div class="card-panel" style="text-align:center;padding:60px 38px;">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdr3ZNL8vNZDvqHr5ThF_PIJ5bdSx-91rBIfLMxAdckXkLDLw/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open Space Listing Form →</a>
+    </div>
+  </div>
+</main>
+
+
+<main id="view-company" class="view">
+  <div class="shell form-shell">
+    <div class="form-head">
+      <span class="eyebrow">For Companies &amp; Startup Teams</span>
+      <h2>Tell us what your team needs</h2>
+      <p>Share your team size, budget and requirements, and we'll match you against available listings.</p>
+    </div>
+
+    <div class="card-panel" style="text-align:center;padding:60px 38px;">
+      <h3 style="margin-bottom:12px;">Fill out our requirement form</h3>
+      <p style="color:var(--muted);margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto;">
+        We need the records of your team size, budget and location preferences. It only takes a couple of minutes.
+      </p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfkxt1A8DAWTAID5OUWtuAB3-cbZPpE1yp6r9stZP31p9JEjg/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        Open Requirement Form →
+      </a>
+    </div>
+  </div>
+</main>
+
+<main id="view-govspace" class="view">
+  <div class="shell form-shell">
+    <div class="form-head">
+      <span class="eyebrow">For Government Departments &amp; Public Bodies</span>
+      <h2>List an extra government building or floor</h2>
+      <p>Got an under-used government building, floor or annexe? List it here so registered startups and companies can apply to work out of it.</p>
+    </div>
+
+    <div class="success-box" id="govspace-success">
+      <h4>✅ Government space submitted</h4>
+      <p id="govspace-success-text"></p>
+    </div>
+
+    <div class="card-panel" style="text-align:center;padding:60px 38px;">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdr3ZNL8vNZDvqHr5ThF_PIJ5bdSx-91rBIfLMxAdckXkLDLw/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open Space Listing Form →</a>
+    </div>
+
+    <div class="dash-section-title" style="margin-top:54px;">
+      <h3>Government spaces companies can apply to</h3>
+    </div>
+    <div id="govspace-container"><div class="empty-state">Loading government-listed spaces…</div></div>
+  </div>
+</main>
+
+<main id="view-dashboard" class="view">
+  <div class="shell dash-shell">
+    <div class="dash-top">
+      <div>
+        <span class="eyebrow">Dashboard</span>
+        <h2 style="margin-top:8px;">Manage your listings &amp; requirements</h2>
+      </div>
+    </div>
+
+    <div class="dash-tabs">
+      <button class="dash-tab active" id="dash-tab-provider" onclick="showDashTab('provider')">Space Provider</button>
+      <button class="dash-tab" id="dash-tab-company" onclick="showDashTab('company')">Company / Startup</button>
+    </div>
+
+  
+    <div class="dash-panel active" id="dash-panel-provider">
+      <div class="dash-top">
+        <div><span class="eyebrow">Your properties</span></div>
+        <div class="dash-lookup">
+          <input id="dash-email" placeholder="Enter the email you registered with" type="email">
+          <button class="btn btn-primary btn-sm" onclick="loadDashboard()">Load My Properties</button>
+        </div>
+      </div>
+
+      <div class="dash-stats">
+        <div class="dstat"><b id="stat-my-props">-</b><span>Your listed properties</span></div>
+        <div class="dstat"><b id="stat-my-seats">-</b><span>Total seats you're offering</span></div>
+        <div class="dstat"><b id="stat-platform-props">-</b><span>Properties on the platform</span></div>
+        <div class="dstat"><b id="stat-platform-companies">-</b><span>Companies looking for space</span></div>
+      </div>
+
+      <div class="dash-section-title">
+        <h3>Listings</h3>
+        <button class="btn btn-outline btn-sm toggle-add" id="add-toggle-btn" onclick="toggleAddPanel()">+ Add New Property</button>
+      </div>
+
+      <div id="prop-container"><div class="empty-state">Enter your email above and click "Load My Properties" to see your listings, or add a new one below.</div></div>
+
+      <div class="add-panel" id="add-panel">
+        <div class="card-panel" style="margin-top:6px;text-align:center;padding:44px 38px;">
+          <div class="form-section-title" id="add-panel-title">Add a new property</div>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdr3ZNL8vNZDvqHr5ThF_PIJ5bdSx-91rBIfLMxAdckXkLDLw/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open Space Listing Form →</a>
+          <div class="form-actions" style="justify-content:center;">
+            <button class="btn btn-outline" onclick="cancelAddPanel()">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
+    <div class="dash-panel" id="dash-panel-company">
+      <div class="dash-top">
+        <div><span class="eyebrow">Your space requirements</span>
+          <p style="color:var(--muted);font-size:13.5px;margin-top:6px;max-width:520px;">Running the same company in more than one state? Add a separate requirement for each city or franchise location: Delhi HQ, Mumbai branch, Bengaluru franchise, and so on.</p>
+        </div>
+        <div class="dash-lookup">
+          <input id="cdash-email" placeholder="Enter the email you registered with" type="email">
+          <button class="btn btn-primary btn-sm" onclick="loadCompanyDashboard()">Load My Requirements</button>
+        </div>
+      </div>
+
+      <div class="dash-stats">
+        <div class="dstat"><b id="stat-my-reqs">-</b><span>Your space requirements</span></div>
+        <div class="dstat"><b id="stat-my-states">-</b><span>Cities / states you need space in</span></div>
+        <div class="dstat"><b id="stat-platform-props-2">-</b><span>Properties on the platform</span></div>
+        <div class="dstat"><b id="stat-platform-govspaces">-</b><span>Government spaces listed</span></div>
+      </div>
+
+      <div class="dash-section-title">
+        <h3>Location requirements</h3>
+        <button class="btn btn-outline btn-sm toggle-add" id="cadd-toggle-btn" onclick="toggleCompanyAddPanel()">+ Add Location / Franchise Requirement</button>
+      </div>
+
+      <div id="creq-container"><div class="empty-state">Enter your email above and click "Load My Requirements" to see them, or add a new one below.</div></div>
+
+      <div class="add-panel" id="cadd-panel">
+        <div class="card-panel" style="margin-top:6px;text-align:center;padding:44px 38px;">
+          <div class="form-section-title" id="cadd-panel-title">Add a location requirement</div>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdU2kMhmRRcdZnEFl7oMozasByb-R45IAhQWUwW_H8C9il6XQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open Location Requirement Form →</a>
+          <div class="form-actions" style="justify-content:center;">
+            <button class="btn btn-outline" onclick="cancelCompanyAddPanel()">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="shell footer-inner">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <img src="images/startupverselogo.png" alt="StartupVerse India logo" style="height:30px;width:auto;object-fit:contain;"/>
+    </div>
+    <p>StartupVerse India · 13, Institutional Area, Lodhi Road, New Delhi 110 003</p>
+    <p>globalexpressgroup@gmail.com · 96505 60277</p>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
