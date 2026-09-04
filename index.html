@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>StartupVerse India: Building India's Startup Operating System</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,36 +19,42 @@
       <button data-view="company" onclick="showView('company')">Find Space</button>
       <button data-view="dashboard" onclick="showView('dashboard')">Dashboard</button>
     </nav>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" onclick="toggleMobileMenu()"><span></span><span></span></button>
     <button class="btn btn-primary btn-sm" onclick="showView('company')">Get Started</button>
   </div>
+  <nav class="mobile-links" aria-label="Mobile navigation">
+    <button data-view="home" onclick="showView('home'); closeMobileMenu()">Home</button>
+    <button data-view="listspace" onclick="showView('listspace'); closeMobileMenu()">List Your Space</button>
+    <button data-view="company" onclick="showView('company'); closeMobileMenu()">Find Space</button>
+    <button data-view="dashboard" onclick="showView('dashboard'); closeMobileMenu()">Dashboard</button>
+    <button class="btn btn-primary" onclick="showView('company'); closeMobileMenu()">Get Started</button>
+  </nav>
 </header>
 
 <main id="view-home" class="view active">
   <section class="hero">
     <div class="shell hero-grid">
-      <div>
-        <span class="eyebrow">India's Integrated Startup Infrastructure Platform</span>
-        <h1>Building India's<br><em>Startup Operating System</em></h1>
-        <p class="lead">Workspace, mentors and investors: one platform, not ten.</p>
+      <div class="hero-copy reveal">
+        <span class="eyebrow">India's startup infrastructure platform</span>
+        <h1>Build boldly.<br><em>Connect deeply.</em><br>Grow further.</h1>
+        <p class="lead">Workspace, mentors, investors and ecosystem support, connected through one intelligent platform.</p>
         <div class="hero-ctas">
           <button class="btn btn-primary" onclick="showView('company')">Find Space for Your Team</button>
-          <button class="btn btn-outline" onclick="showView('listspace')">List Your Property</button>
+          <button class="btn btn-outline" onclick="showView('listspace')">List Your Space</button>
         </div>
         <div class="hero-stats">
           <div class="stat"><b>212K+</b><span>DPIIT-registered startups</span></div>
-          <div class="stat"><b>1,500+</b><span>Accelerators active in India</span></div>
-          <div class="stat"><b id="stat-live-props">-</b><span>Spaces live on the platform</span></div>
+          <div class="stat"><b>1,500+</b><span>Accelerators in India</span></div>
+          <div class="stat"><b id="stat-live-props">-</b><span>Spaces live on platform</span></div>
         </div>
       </div>
-      <div class="network">
-        <div class="ring">
-          <div class="node center"><span>StartupVerse</span><span>India</span></div>
-          <div class="node" style="left:6%;top:14%;">Startups</div>
-          <div class="node" style="right:2%;top:20%;">Investors</div>
-          <div class="node" style="right:-2%;bottom:22%;">Mentors</div>
-          <div class="node" style="left:10%;bottom:10%;">Space Providers</div>
-          <div class="node" style="left:38%;top:0%;">Corporates</div>
-        </div>
+      <div class="network reveal" aria-label="StartupVerse ecosystem map">
+        <div class="network-grid"></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <svg class="network-lines" viewBox="0 0 500 500" aria-hidden="true"><path d="M250 250 L95 115 M250 250 L407 128 M250 250 L420 350 M250 250 L90 375 M250 250 L250 55 M250 250 L250 445"/></svg>
+        <div class="node center"><strong>StartupVerse</strong><span>THE CONNECTIVE LAYER</span></div>
+        <button class="node node-startups">Startups</button><button class="node node-investors">Investors</button>
+        <button class="node node-mentors">Mentors</button><button class="node node-spaces">Workspaces</button>
+        <button class="node node-corporates">Corporates</button><button class="node node-government">Government</button>
       </div>
     </div>
   </section>
@@ -64,18 +70,14 @@
     </div>
   </section>
 
-  <section id="who">
+  <section id="who" class="story">
     <div class="shell who-grid">
-      <div>
-        <span class="eyebrow">Who We Are</span>
-        <h2 style="margin-top:10px;">Not a co-working company.<br>A startup infrastructure platform.</h2>
-        <p>We match businesses with spare workspace to startups that need it, plus mentorship, investor access and legal support, all in one place.</p>
-      </div>
-      <ul class="who-list">
-        <li><span class="mark">1</span><div><b>Physical + Digital.</b> Real workspace, matched through the platform.</div></li>
-        <li><span class="mark">2</span><div><b>Founder-first.</b> Built for early-stage teams and budgets.</div></li>
-        <li><span class="mark">3</span><div><b>Two-sided.</b> Separate forms for providers and startups.</div></li>
-        <li><span class="mark">4</span><div><b>Delhi first, India next.</b> Expanding city by city.</div></li>
+      <div class="reveal"><span class="eyebrow">The infrastructure layer</span><h2>More than workspace.<br><em>Infrastructure for ambition.</em></h2><p>We match businesses with spare workspace to startups that need it, with mentorship, investor access and legal support close at hand.</p></div>
+      <ul class="who-list reveal">
+        <li><span class="mark">01</span><div><b>Workspace</b><small>Real places, matched to your team and budget.</small></div></li>
+        <li><span class="mark">02</span><div><b>Connections</b><small>Mentors, investors and partners in your orbit.</small></div></li>
+        <li><span class="mark">03</span><div><b>Growth</b><small>Practical support for the next stage.</small></div></li>
+        <li><span class="mark">04</span><div><b>Delhi first, India next</b><small>Expanding city by city, with intent.</small></div></li>
       </ul>
     </div>
   </section>
@@ -84,15 +86,15 @@
     <div class="shell">
       <div class="section-head">
         <span class="eyebrow">What We Offer</span>
-        <h2>Everything a startup needs, under one roof</h2>
+        <h2>Everything your next chapter needs.</h2>
       </div>
       <div class="services-grid">
-        <div class="service-card"><div class="icon">🏢</div><h3>Co-working &amp; Managed Offices</h3><p>Flexible workspace, matched to your budget.</p></div>
-        <div class="service-card"><div class="icon">🚀</div><h3>Startup Incubation</h3><p>From idea to product-market fit.</p></div>
-        <div class="service-card"><div class="icon">💰</div><h3>Investor Connect</h3><p>Curated intros to angels &amp; VCs.</p></div>
-        <div class="service-card"><div class="icon">📋</div><h3>Compliance &amp; Legal</h3><p>Regulatory, tax and legal support.</p></div>
-        <div class="service-card"><div class="icon">🤝</div><h3>Corporate Innovation</h3><p>Partnerships, pilots &amp; procurement.</p></div>
-        <div class="service-card"><div class="icon">👥</div><h3>Founder Community</h3><p>Peer networks &amp; ecosystem events.</p></div>
+        <article class="service-card reveal" role="button" tabindex="0" data-service-view="company" aria-label="Explore workspace and managed offices"><div class="icon">01</div><h3>Workspace &amp; managed offices</h3><p>Flexible space, matched to your budget and pace.</p><span class="arrow">↗</span></article>
+        <article class="service-card reveal" role="button" tabindex="0" data-service-view="company" aria-label="Explore startup incubation"><div class="icon">02</div><h3>Startup incubation</h3><p>Support that helps ideas become durable companies.</p><span class="arrow">↗</span></article>
+        <article class="service-card reveal" role="button" tabindex="0" data-service-view="company" aria-label="Explore investor connect"><div class="icon">03</div><h3>Investor connect</h3><p>Curated introductions to angels and VCs.</p><span class="arrow">↗</span></article>
+        <article class="service-card reveal" role="button" tabindex="0" data-service-view="company" aria-label="Explore compliance and legal support"><div class="icon">04</div><h3>Compliance &amp; legal</h3><p>Regulatory, tax and legal support when it counts.</p><span class="arrow">↗</span></article>
+        <article class="service-card reveal" role="button" tabindex="0" data-service-view="listspace" aria-label="Explore corporate innovation"><div class="icon">05</div><h3>Corporate innovation</h3><p>Partnerships, pilots and procurement pathways.</p><span class="arrow">↗</span></article>
+        <article class="service-card reveal" role="button" tabindex="0" data-service-view="company" aria-label="Explore the founder community"><div class="icon">06</div><h3>Founder community</h3><p>Peer networks and ecosystem moments that compound.</p><span class="arrow">↗</span></article>
       </div>
     </div>
   </section>
@@ -101,21 +103,32 @@
     <div class="shell">
       <div class="section-head">
         <span class="eyebrow">Get Started</span>
-        <h2>Two sides, two forms</h2>
+        <h2>One platform. Two ways in.</h2>
       </div>
       <div class="paths paths-2">
         <div class="path-card">
           <span class="eyebrow">For Space Providers &amp; Government Bodies</span>
-          <h3>List your space</h3>
+          <h3>Turn unused space into opportunity.</h3>
           <p>Private property or spare government space: size, seats, amenities and photos to get matched with teams.</p>
           <button class="btn btn-primary" onclick="showView('listspace')">List Your Space →</button>
         </div>
         <div class="path-card alt">
           <span class="eyebrow">For Startups &amp; Companies</span>
-          <h3>Find your team a home</h3>
+          <h3>Find your team's next home.</h3>
           <p>Team size, budget and must-haves, and we'll match you.</p>
           <button class="btn btn-primary" onclick="showView('company')">Find Space →</button>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="discovery tinted">
+    <div class="shell discovery-grid">
+      <div class="discovery-copy reveal"><span class="eyebrow">Workspace discovery</span><h2>Find a space that fits your startup.</h2><p>Tell us what your team needs and we will help you discover the right place to build. These interface cards are a preview, not live listings.</p><button class="btn btn-primary" onclick="showView('company')">Find a Workspace →</button></div>
+      <div class="search-preview reveal">
+        <div class="search-top"><span>Explore workspace</span><span class="preview-badge">Preview</span></div>
+        <div class="search-fields"><div><small>LOCATION</small><strong>Delhi NCR⌄</strong></div><div><small>TEAM SIZE</small><strong>10–25 people⌄</strong></div><button class="btn btn-primary">Search</button></div>
+        <div class="workspace-list"><article><div><strong>Flexible team space</strong><span>Gurugram · 12 seats</span></div><b>₹ —</b></article><article><div><strong>Private office suite</strong><span>Delhi NCR · 20 seats</span></div><b>₹ —</b></article></div>
       </div>
     </div>
   </section>
@@ -124,14 +137,18 @@
     <div class="shell">
       <div class="section-head">
         <span class="eyebrow">How It Works</span>
-        <h2>From registration to move-in</h2>
+        <h2>From intent to momentum.</h2>
       </div>
       <div class="steps">
-        <div class="step"><div class="num">01</div><h4>Register</h4><p>Providers and teams each fill their own form.</p></div>
-        <div class="step"><div class="num">02</div><h4>Match</h4><p>Matched by city, budget and amenities.</p></div>
-        <div class="step"><div class="num">03</div><h4>Move in</h4><p>Managed from the dashboard, ready to go.</p></div>
+        <div class="step reveal"><div class="num">01</div><h4>Tell us what you need</h4><p>Share your city, team and must-haves.</p></div>
+        <div class="step reveal"><div class="num">02</div><h4>Get matched</h4><p>We connect the right people and places.</p></div>
+        <div class="step reveal"><div class="num">03</div><h4>Connect</h4><p>Compare details, ask questions and decide.</p></div>
+        <div class="step reveal"><div class="num">04</div><h4>Move in</h4><p>Get on with building what matters.</p></div>
       </div>
     </div>
+  </section>
+  <section class="closing-cta">
+    <div class="shell cta-inner reveal"><span class="eyebrow">Delhi first. India next.</span><h2>Your next opportunity<br>could start here.</h2><p>Whether you are building a startup or providing workspace, StartupVerse connects you to the ecosystem.</p><div class="hero-ctas"><button class="btn btn-primary" onclick="showView('company')">Find Space</button><button class="btn btn-light" onclick="showView('listspace')">List Your Space</button></div></div>
   </section>
 </main>
 
@@ -314,13 +331,13 @@
 </main>
 
 <footer>
-  <div class="shell footer-inner">
-    <div style="display:flex;align-items:center;gap:10px;">
-      <img src="images/startupverselogo.png" alt="StartupVerse India logo" style="height:30px;width:auto;object-fit:contain;"/>
-    </div>
-    <p>StartupVerse India · 13, Institutional Area, Lodhi Road, New Delhi 110 003</p>
-    <p>globalexpressgroup@gmail.com · 96505 60277</p>
+  <div class="shell footer-grid">
+    <div class="footer-brand"><img src="images/startupverselogo.png" alt="StartupVerse India logo"/><strong>StartupVerse India</strong><p>The connective layer for India's startup ecosystem.</p></div>
+    <div class="footer-column"><h4>Platform</h4><button onclick="showView('company')">Find Space</button><button onclick="showView('listspace')">List Your Space</button><button onclick="showView('dashboard')">Dashboard</button></div>
+    <div class="footer-column"><h4>Ecosystem</h4><button onclick="showView('company')">Startups</button><button onclick="showView('company')">Investors</button><button onclick="showView('company')">Mentors</button><button onclick="showView('listspace')">Corporates</button></div>
+    <div class="footer-column footer-contact"><h4>Contact</h4><p>13, Institutional Area,<br>Lodhi Road, New Delhi 110 003</p><a href="mailto:globalexpressgroup@gmail.com">globalexpressgroup@gmail.com</a><a href="tel:+919650560277">96505 60277</a></div>
   </div>
+  <div class="shell footer-bottom"><span>© StartupVerse India</span><span>Delhi first. India next.</span></div>
 </footer>
 <script src="script.js"></script>
 </body>

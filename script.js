@@ -11,6 +11,44 @@ function showView(name){
   if(name==='govspace'){ loadGovSpaces(); }
 }
 
+function toggleMobileMenu(){
+  const menu = document.querySelector('.mobile-links');
+  const toggle = document.querySelector('.menu-toggle');
+  if(!menu || !toggle) return;
+  const open = menu.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', String(open));
+  toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+}
+
+function closeMobileMenu(){
+  const menu = document.querySelector('.mobile-links');
+  const toggle = document.querySelector('.menu-toggle');
+  if(menu) menu.classList.remove('open');
+  if(toggle){ toggle.setAttribute('aria-expanded','false'); toggle.setAttribute('aria-label','Open navigation'); }
+}
+
+const revealObserver = 'IntersectionObserver' in window ? new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){ entry.target.classList.add('is-visible'); revealObserver.unobserve(entry.target); }
+  });
+},{threshold:0.12}) : null;
+
+document.querySelectorAll('.reveal').forEach(element=>{
+  if(revealObserver) revealObserver.observe(element); else element.classList.add('is-visible');
+});
+
+document.querySelectorAll('[data-service-view]').forEach(card=>{
+  const activate = ()=>showView(card.dataset.serviceView);
+  card.addEventListener('click', activate);
+  card.addEventListener('keydown', event=>{
+    if(event.key==='Enter' || event.key===' '){ event.preventDefault(); activate(); }
+  });
+});
+
+window.addEventListener('scroll',()=>{
+  document.querySelector('header.nav')?.classList.toggle('scrolled', window.scrollY > 12);
+},{passive:true});
+
 function showDashTab(name){
   document.querySelectorAll('.dash-tab').forEach(b=>b.classList.remove('active'));
   document.querySelectorAll('.dash-panel').forEach(p=>p.classList.remove('active'));
